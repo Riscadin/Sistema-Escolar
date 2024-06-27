@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using System.Threading;
 using System.Timers;
+using MySqlX.XDevAPI.Common;
 
 namespace JanelasMDI
 {
@@ -96,18 +97,29 @@ namespace JanelasMDI
 
         private void organizarJanelasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.LayoutMdi(MdiLayout.TileHorizontal);
+            foreach (Form f in this.MdiChildren)
+            {
+                this.LayoutMdi(MdiLayout.TileHorizontal);
+            }
+           
         }
 
         private void organizarNaVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Form f in this.MdiChildren)
+            {
+                this.LayoutMdi(MdiLayout.TileVertical);
+            }
 
-            this.LayoutMdi(MdiLayout.TileVertical);
         }
 
         private void organizarEmCascataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.LayoutMdi(MdiLayout.Cascade);
+            foreach (Form f in this.MdiChildren)
+            {
+                this.LayoutMdi(MdiLayout.Cascade);
+            }
+            
         }
 
         private void fecharTodasJanelasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -178,7 +190,7 @@ namespace JanelasMDI
 
         private void arquivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            arquivoToolStripMenuItem.ForeColor = Color.FromArgb(100, 36, 44);
         }
 
         private void menuStrip2_MouseMove(object sender, MouseEventArgs e)
@@ -315,6 +327,7 @@ namespace JanelasMDI
         {
             try
             {
+                nomeDoUsuárioToolStripMenuItem.Text = sla;
                 //bemvindo.Text = sla + " bem vindo ao nosso\r\nsistema de gerenciamento escolar.\r\n";
                 //BemVindoTimer.Start();
 
@@ -407,6 +420,58 @@ namespace JanelasMDI
         private void bemvindo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void nomeDoUsuárioToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            nomeDoUsuárioToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void nomeDoUsuárioToolStripMenuItem_MouseMove(object sender, MouseEventArgs e)
+        {
+            nomeDoUsuárioToolStripMenuItem.ForeColor = Color.FromArgb(100, 36, 44);
+        }
+
+        private void exibirToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            exibirToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void exibirToolStripMenuItem_MouseMove(object sender, MouseEventArgs e)
+        {
+            exibirToolStripMenuItem.ForeColor = Color.FromArgb(100, 36, 44);
+        }
+
+        private void caixaDeFerramentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(toolStrip1.Visible == true)
+            {
+                toolStrip1.Visible = false;
+            }
+            else
+            {
+                toolStrip1.Visible = true;
+            }
+            
+        }
+
+        private void fazerLogoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(MessageBox.Show("Tem certeza que deseja sair para logar com outra conta?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.Close();
+                    this.Hide();
+                    frm_Login f = new frm_Login();
+                    f.ShowDialog();
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message,"ERRO");
+            }
         }
     }
 }

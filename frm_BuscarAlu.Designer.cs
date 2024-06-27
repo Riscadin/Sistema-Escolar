@@ -64,6 +64,11 @@
             this.mskDdd = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mskDataNasc = new System.Windows.Forms.MaskedTextBox();
+            this.txtRespon = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.msktelefoneCliente = new System.Windows.Forms.MaskedTextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.mskDDDcliente = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +79,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(323, 386);
+            this.label8.Location = new System.Drawing.Point(323, 411);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 15);
             this.label8.TabIndex = 54;
@@ -82,12 +87,12 @@
             // 
             // mskCpfCliente
             // 
-            this.mskCpfCliente.Location = new System.Drawing.Point(323, 404);
+            this.mskCpfCliente.Location = new System.Drawing.Point(323, 429);
             this.mskCpfCliente.Mask = "000.000.000-00";
             this.mskCpfCliente.Name = "mskCpfCliente";
             this.mskCpfCliente.ReadOnly = true;
             this.mskCpfCliente.Size = new System.Drawing.Size(111, 20);
-            this.mskCpfCliente.TabIndex = 53;
+            this.mskCpfCliente.TabIndex = 54;
             // 
             // label7
             // 
@@ -95,7 +100,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(199, 386);
+            this.label7.Location = new System.Drawing.Point(199, 411);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 15);
             this.label7.TabIndex = 52;
@@ -103,12 +108,12 @@
             // 
             // mskCpfAluno
             // 
-            this.mskCpfAluno.Location = new System.Drawing.Point(202, 404);
+            this.mskCpfAluno.Location = new System.Drawing.Point(202, 429);
             this.mskCpfAluno.Mask = "000.000.000-00";
             this.mskCpfAluno.Name = "mskCpfAluno";
             this.mskCpfAluno.ReadOnly = true;
             this.mskCpfAluno.Size = new System.Drawing.Size(111, 20);
-            this.mskCpfAluno.TabIndex = 51;
+            this.mskCpfAluno.TabIndex = 53;
             // 
             // label6
             // 
@@ -116,7 +121,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(451, 260);
+            this.label6.Location = new System.Drawing.Point(451, 245);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 15);
             this.label6.TabIndex = 50;
@@ -128,7 +133,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(202, 342);
+            this.label5.Location = new System.Drawing.Point(202, 327);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 15);
             this.label5.TabIndex = 48;
@@ -140,7 +145,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(199, 301);
+            this.label4.Location = new System.Drawing.Point(199, 286);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 15);
             this.label4.TabIndex = 47;
@@ -152,7 +157,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(451, 342);
+            this.label3.Location = new System.Drawing.Point(451, 327);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 15);
             this.label3.TabIndex = 46;
@@ -160,11 +165,11 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(202, 360);
+            this.txtEmail.Location = new System.Drawing.Point(202, 345);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(242, 20);
-            this.txtEmail.TabIndex = 44;
+            this.txtEmail.TabIndex = 51;
             // 
             // label2
             // 
@@ -172,7 +177,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(363, 260);
+            this.label2.Location = new System.Drawing.Point(363, 245);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 15);
             this.label2.TabIndex = 43;
@@ -180,20 +185,20 @@
             // 
             // mskTelefone
             // 
-            this.mskTelefone.Location = new System.Drawing.Point(363, 278);
+            this.mskTelefone.Location = new System.Drawing.Point(363, 263);
             this.mskTelefone.Mask = "000000000";
             this.mskTelefone.Name = "mskTelefone";
             this.mskTelefone.ReadOnly = true;
             this.mskTelefone.Size = new System.Drawing.Size(81, 20);
-            this.mskTelefone.TabIndex = 42;
+            this.mskTelefone.TabIndex = 48;
             // 
             // txtNomeCompleto
             // 
-            this.txtNomeCompleto.Location = new System.Drawing.Point(202, 319);
+            this.txtNomeCompleto.Location = new System.Drawing.Point(202, 304);
             this.txtNomeCompleto.Name = "txtNomeCompleto";
             this.txtNomeCompleto.ReadOnly = true;
             this.txtNomeCompleto.Size = new System.Drawing.Size(366, 20);
-            this.txtNomeCompleto.TabIndex = 41;
+            this.txtNomeCompleto.TabIndex = 50;
             // 
             // label1
             // 
@@ -201,7 +206,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(199, 259);
+            this.label1.Location = new System.Drawing.Point(199, 244);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 15);
             this.label1.TabIndex = 40;
@@ -209,18 +214,18 @@
             // 
             // txtMatriculaAluno
             // 
-            this.txtMatriculaAluno.Location = new System.Drawing.Point(202, 278);
+            this.txtMatriculaAluno.Location = new System.Drawing.Point(202, 263);
             this.txtMatriculaAluno.Name = "txtMatriculaAluno";
             this.txtMatriculaAluno.ReadOnly = true;
             this.txtMatriculaAluno.Size = new System.Drawing.Size(114, 20);
-            this.txtMatriculaAluno.TabIndex = 39;
+            this.txtMatriculaAluno.TabIndex = 46;
             // 
             // txtBusCodCliente
             // 
             this.txtBusCodCliente.Location = new System.Drawing.Point(329, 69);
             this.txtBusCodCliente.Name = "txtBusCodCliente";
             this.txtBusCodCliente.Size = new System.Drawing.Size(113, 22);
-            this.txtBusCodCliente.TabIndex = 55;
+            this.txtBusCodCliente.TabIndex = 42;
             this.txtBusCodCliente.Enter += new System.EventHandler(this.txtBusCodCliente_Enter);
             this.txtBusCodCliente.Leave += new System.EventHandler(this.txtBusCodCliente_Leave);
             // 
@@ -230,7 +235,7 @@
             this.mskBusCpfCli.Mask = "000.000.000-00";
             this.mskBusCpfCli.Name = "mskBusCpfCli";
             this.mskBusCpfCli.Size = new System.Drawing.Size(114, 22);
-            this.mskBusCpfCli.TabIndex = 56;
+            this.mskBusCpfCli.TabIndex = 40;
             this.mskBusCpfCli.Enter += new System.EventHandler(this.mskBusCpfCli_Enter);
             this.mskBusCpfCli.Leave += new System.EventHandler(this.mskBusCpfCli_Leave);
             // 
@@ -240,7 +245,7 @@
             this.mskBusCpfAlu.Mask = "000.000.000-00";
             this.mskBusCpfAlu.Name = "mskBusCpfAlu";
             this.mskBusCpfAlu.Size = new System.Drawing.Size(114, 22);
-            this.mskBusCpfAlu.TabIndex = 58;
+            this.mskBusCpfAlu.TabIndex = 41;
             this.mskBusCpfAlu.Enter += new System.EventHandler(this.mskBusCpfAlu_Enter);
             this.mskBusCpfAlu.Leave += new System.EventHandler(this.mskBusCpfAlu_Leave);
             // 
@@ -249,7 +254,7 @@
             this.txtBusCodAluno.Location = new System.Drawing.Point(329, 114);
             this.txtBusCodAluno.Name = "txtBusCodAluno";
             this.txtBusCodAluno.Size = new System.Drawing.Size(113, 22);
-            this.txtBusCodAluno.TabIndex = 57;
+            this.txtBusCodAluno.TabIndex = 43;
             this.txtBusCodAluno.Enter += new System.EventHandler(this.txtBusCodAluno_Enter);
             this.txtBusCodAluno.Leave += new System.EventHandler(this.txtBusCodAluno_Leave);
             // 
@@ -381,7 +386,7 @@
             this.rdCpfCli.Location = new System.Drawing.Point(18, 51);
             this.rdCpfCli.Name = "rdCpfCli";
             this.rdCpfCli.Size = new System.Drawing.Size(114, 20);
-            this.rdCpfCli.TabIndex = 67;
+            this.rdCpfCli.TabIndex = 39;
             this.rdCpfCli.TabStop = true;
             this.rdCpfCli.Text = "CPF do Cliente";
             this.rdCpfCli.UseVisualStyleBackColor = true;
@@ -397,7 +402,7 @@
             this.btnBuscarOutro.Location = new System.Drawing.Point(329, 156);
             this.btnBuscarOutro.Name = "btnBuscarOutro";
             this.btnBuscarOutro.Size = new System.Drawing.Size(112, 22);
-            this.btnBuscarOutro.TabIndex = 66;
+            this.btnBuscarOutro.TabIndex = 45;
             this.btnBuscarOutro.Text = "LIMPAR";
             this.btnBuscarOutro.UseVisualStyleBackColor = false;
             this.btnBuscarOutro.Click += new System.EventHandler(this.btnBuscarOutro_Click);
@@ -412,18 +417,18 @@
             this.btnBuscar.Location = new System.Drawing.Point(174, 156);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(114, 22);
-            this.btnBuscar.TabIndex = 65;
+            this.btnBuscar.TabIndex = 44;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtGenero
             // 
-            this.txtGenero.Location = new System.Drawing.Point(454, 278);
+            this.txtGenero.Location = new System.Drawing.Point(454, 263);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.ReadOnly = true;
             this.txtGenero.Size = new System.Drawing.Size(114, 20);
-            this.txtGenero.TabIndex = 67;
+            this.txtGenero.TabIndex = 49;
             // 
             // label14
             // 
@@ -431,7 +436,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(323, 260);
+            this.label14.Location = new System.Drawing.Point(323, 245);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(34, 15);
             this.label14.TabIndex = 69;
@@ -439,12 +444,12 @@
             // 
             // mskDdd
             // 
-            this.mskDdd.Location = new System.Drawing.Point(323, 278);
+            this.mskDdd.Location = new System.Drawing.Point(323, 263);
             this.mskDdd.Mask = "00";
             this.mskDdd.Name = "mskDdd";
             this.mskDdd.ReadOnly = true;
             this.mskDdd.Size = new System.Drawing.Size(32, 20);
-            this.mskDdd.TabIndex = 68;
+            this.mskDdd.TabIndex = 47;
             // 
             // pictureBox1
             // 
@@ -458,12 +463,62 @@
             // 
             // mskDataNasc
             // 
-            this.mskDataNasc.Location = new System.Drawing.Point(454, 360);
+            this.mskDataNasc.Location = new System.Drawing.Point(454, 345);
             this.mskDataNasc.Mask = "00/00/0000";
             this.mskDataNasc.Name = "mskDataNasc";
             this.mskDataNasc.ReadOnly = true;
             this.mskDataNasc.Size = new System.Drawing.Size(114, 20);
-            this.mskDataNasc.TabIndex = 45;
+            this.mskDataNasc.TabIndex = 52;
+            // 
+            // txtRespon
+            // 
+            this.txtRespon.Location = new System.Drawing.Point(202, 388);
+            this.txtRespon.Name = "txtRespon";
+            this.txtRespon.ReadOnly = true;
+            this.txtRespon.Size = new System.Drawing.Size(366, 20);
+            this.txtRespon.TabIndex = 50;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(199, 370);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(115, 15);
+            this.label15.TabIndex = 47;
+            this.label15.Text = "Nome Responsável";
+            // 
+            // msktelefoneCliente
+            // 
+            this.msktelefoneCliente.Location = new System.Drawing.Point(472, 429);
+            this.msktelefoneCliente.Mask = "000000000";
+            this.msktelefoneCliente.Name = "msktelefoneCliente";
+            this.msktelefoneCliente.ReadOnly = true;
+            this.msktelefoneCliente.Size = new System.Drawing.Size(96, 20);
+            this.msktelefoneCliente.TabIndex = 48;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(440, 411);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(129, 15);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "Telefone Responsável";
+            // 
+            // mskDDDcliente
+            // 
+            this.mskDDDcliente.Location = new System.Drawing.Point(443, 429);
+            this.mskDDDcliente.Mask = "000000000";
+            this.mskDDDcliente.Name = "mskDDDcliente";
+            this.mskDDDcliente.ReadOnly = true;
+            this.mskDDDcliente.Size = new System.Drawing.Size(29, 20);
+            this.mskDDDcliente.TabIndex = 71;
             // 
             // frm_BuscarAlu
             // 
@@ -472,6 +527,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 455);
+            this.Controls.Add(this.mskDDDcliente);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.mskDdd);
@@ -483,12 +539,16 @@
             this.Controls.Add(this.mskCpfAluno);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.mskDataNasc);
             this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.msktelefoneCliente);
             this.Controls.Add(this.mskTelefone);
+            this.Controls.Add(this.txtRespon);
             this.Controls.Add(this.txtNomeCompleto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMatriculaAluno);
@@ -544,5 +604,10 @@
         private System.Windows.Forms.RadioButton rdCpfAlu;
         private System.Windows.Forms.RadioButton rdCodCli;
         private System.Windows.Forms.RadioButton rdCpfCli;
+        private System.Windows.Forms.TextBox txtRespon;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.MaskedTextBox msktelefoneCliente;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.MaskedTextBox mskDDDcliente;
     }
 }

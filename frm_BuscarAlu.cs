@@ -17,15 +17,19 @@ namespace JanelasMDI
         MySqlCommand comando;
         string strSQL;
         MySqlDataReader dr;
+        MySqlDataAdapter da;
+        public List<string> sla = new List<string>();
+
 
         public frm_BuscarAlu()
         {
             InitializeComponent();
+
         }
 
         private void frm_BuscarAlu_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void btnLimparTudo_Click(object sender, EventArgs e)
@@ -52,6 +56,7 @@ namespace JanelasMDI
             mskBusCpfCli.Clear();
             txtMatriculaAluno.Clear();
             mskDdd.Clear();
+            txtRespon.Clear();
         }
         public void metodoblock()
         {
@@ -88,75 +93,55 @@ namespace JanelasMDI
 
         }
 
+        private void metodoescolherfilho()
+        {
+            //string connectionString = "Server=localhost;Database=escola;Uid=rick;Pwd=1205;";
+            //using (MySqlConnection conexao = new MySqlConnection(connectionString))
+            //{
+            //    try
+            //    {
+            //        conexao.Open();
+                    
+            //        strSQL = $"select NomeCompleto from t_aluno where CPFTutor = '{mskBusCpfCli.Text}' OR CodigoCliente = '{txtBusCodCliente}'";
+            //        //comando.Parameters.AddWithValue("@cpftutor", mskBusCpfCli.Text);
+            //        //comando.Parameters.AddWithValue("@codTutor", txtBusCodCliente.Text);
+            //        MySqlDataAdapter da = new MySqlDataAdapter(strSQL, conexao);
+
+            //        DataTable dt = new DataTable();
+            //        da.Fill(dt);
+
+            //        foreach (DataRow row in dt.Rows)
+            //        {
+            //            string nomeCompleto = row["NomeCompleto"].ToString();
+            //            MessageBox.Show(nomeCompleto);
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("ERRO", ex.Message);
+            //    }
+            //}
+
+
+
+
+
+
+
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
-            
+            //metodoescolherfilho();
 
             //metodoblock();
 
+            metodosalvar();
 
 
 
-
-            mskBusCpfCli.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            var valorSemMascara1 = mskBusCpfCli.Text;
-
-            mskBusCpfAlu.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            var valorSemMascara2 = mskBusCpfAlu.Text;
-
-            mskDataNasc.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            var valorSemMascara3 = mskDataNasc.Text;
-
-            mskCpfAluno.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            var valorSemMascara4 = mskCpfAluno.Text;
-
-            mskCpfCliente.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            var valorSemMascara5 = mskCpfCliente.Text;
-
-            conexao = new MySqlConnection("Server = localhost; Database = escola; Uid = rick ; Pwd = 1205;");
-            strSQL = "SELECT * FROM Aluno WHERE MatriculaAluno = @matriculaAluno OR CPFAluno = @cpfaluno OR CPFTutor = @cpfTutor OR CodigoCliente = @codTutor ";
-            comando = new MySqlCommand(strSQL, conexao);
-            comando.Parameters.AddWithValue("@matriculaAluno", txtBusCodAluno.Text);
-            comando.Parameters.AddWithValue("@cpfaluno", mskBusCpfAlu.Text);
-            comando.Parameters.AddWithValue("@cpfTutor", mskBusCpfCli.Text);
-            comando.Parameters.AddWithValue("@codTutor", txtBusCodCliente.Text);
-
-
-            conexao.Open();
-
-            dr = comando.ExecuteReader();
-
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-
-                    txtMatriculaAluno.Text = Convert.ToString(dr["MatriculaAluno"]);
-                    mskDdd.Text = Convert.ToString(dr["TelefoneDDD"]);
-                    mskTelefone.Text = Convert.ToString(dr["TelefoneNumero"]);
-                    txtGenero.Text = Convert.ToString(dr["Genero"]);
-                    txtNomeCompleto.Text = Convert.ToString(dr["NomeCompleto"]);
-                    txtEmail.Text = Convert.ToString(dr["Email"]);
-                    mskDataNasc.Text = Convert.ToString(dr["DataNascimento"]);
-                    mskCpfAluno.Text = Convert.ToString(dr["CPFAluno"]);
-                    mskCpfCliente.Text = Convert.ToString(dr["CPFTutor"]);
-
-
-                }
-                MessageBox.Show("ALUNO ENCONTRADO!");
-
-
-            }
-            else
-            {
-                MessageBox.Show("ESSE ALUNO NÃO PODE SER ENCONTRADO, TALVEZ ESSE ALUNO NÃO EXISTA NO NOSSO SISTEMA!");
-            }
-            mskBusCpfCli.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            mskBusCpfAlu.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            mskDataNasc.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            mskCpfAluno.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            mskCpfCliente.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+           
         }
 
         private void btnBuscarOutro_Click(object sender, EventArgs e)
@@ -295,6 +280,85 @@ namespace JanelasMDI
             mskBusCpfAlu.Clear();
             mskBusCpfCli.Clear();
             txtBusCodCliente.Clear();
+        }
+
+        private void metodosalvar()
+        {
+            try
+            {
+                mskBusCpfCli.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                var valorSemMascara1 = mskBusCpfCli.Text;
+
+                mskBusCpfAlu.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                var valorSemMascara2 = mskBusCpfAlu.Text;
+
+                mskDataNasc.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                var valorSemMascara3 = mskDataNasc.Text;
+
+                mskCpfAluno.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                var valorSemMascara4 = mskCpfAluno.Text;
+
+                mskCpfCliente.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                var valorSemMascara5 = mskCpfCliente.Text;
+
+
+
+                conexao = new MySqlConnection("Server = localhost; Database = escola; Uid = rick ; Pwd = 1205;");
+                strSQL = "SELECT * FROM t_aluno WHERE MatriculaAluno = @matriculaAluno OR CPFAluno = @cpfaluno OR CPFTutor = @cpfTutor OR CodigoCli = @codTutor ";
+                comando = new MySqlCommand(strSQL, conexao);
+                comando.Parameters.AddWithValue("@matriculaAluno", txtBusCodAluno.Text);
+                comando.Parameters.AddWithValue("@cpfaluno", mskBusCpfAlu.Text);
+                comando.Parameters.AddWithValue("@cpfTutor", mskBusCpfCli.Text);
+                comando.Parameters.AddWithValue("@codTutor", txtBusCodCliente.Text);
+
+
+                conexao.Open();
+
+                dr = comando.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+
+                        txtMatriculaAluno.Text = Convert.ToString(dr["MatriculaAluno"]);
+                        mskDdd.Text = Convert.ToString(dr["TelefoneDDD"]);
+                        mskTelefone.Text = Convert.ToString(dr["TelefoneNumero"]);
+                        txtGenero.Text = Convert.ToString(dr["Genero"]);
+                        txtNomeCompleto.Text = Convert.ToString(dr["NomeCompleto"]);
+                        txtEmail.Text = Convert.ToString(dr["Email"]);
+                        mskDataNasc.Text = Convert.ToString(dr["DataNascimento"]);
+                        mskCpfAluno.Text = Convert.ToString(dr["CPFAluno"]);
+                        mskCpfCliente.Text = Convert.ToString(dr["CPFTutor"]);
+                        txtRespon.Text = Convert.ToString(dr["NomeResponsavel"]);
+                        mskDDDcliente.Text = Convert.ToString(dr["DDDresponsavel"]);
+                        msktelefoneCliente.Text = Convert.ToString(dr["TelefoneResponsavel"]);
+
+
+
+                    }
+                    MessageBox.Show("ALUNO ENCONTRADO!");
+
+
+                }
+                else
+                {
+                    MessageBox.Show("ESSE ALUNO NÃO PODE SER ENCONTRADO, TALVEZ ESSE ALUNO NÃO EXISTA NO NOSSO SISTEMA!");
+                }
+                mskBusCpfCli.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                mskBusCpfAlu.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                mskDataNasc.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                mskCpfAluno.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                mskCpfCliente.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERRO: " + ex.Message, "ERRO!!!");
+            }
+            finally
+            {
+                conexao.Close();
+            }
         }
     }
 

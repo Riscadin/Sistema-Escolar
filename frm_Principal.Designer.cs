@@ -35,6 +35,8 @@
             this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.fecharToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exibirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caixaDeFerramentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarAnimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +62,8 @@
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreOSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nomeDoUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fazerLogoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsBtnCadCli = new System.Windows.Forms.ToolStripButton();
             this.tsBtnBuscarCli = new System.Windows.Forms.ToolStripButton();
@@ -81,10 +85,12 @@
             this.menuStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(36)))), ((int)(((byte)(44)))));
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
+            this.exibirToolStripMenuItem,
             this.sistemaToolStripMenuItem,
             this.ferramentasToolStripMenuItem,
             this.janelaToolStripMenuItem,
-            this.ajudaToolStripMenuItem});
+            this.ajudaToolStripMenuItem,
+            this.nomeDoUsuárioToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.MdiWindowListItem = this.janelaToolStripMenuItem;
             this.menuStrip2.Name = "menuStrip2";
@@ -134,6 +140,26 @@
             this.fecharToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.fecharToolStripMenuItem.Text = "Fechar Sistema";
             this.fecharToolStripMenuItem.Click += new System.EventHandler(this.fecharToolStripMenuItem_Click);
+            // 
+            // exibirToolStripMenuItem
+            // 
+            this.exibirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.caixaDeFerramentaToolStripMenuItem});
+            this.exibirToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exibirToolStripMenuItem.Name = "exibirToolStripMenuItem";
+            this.exibirToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.exibirToolStripMenuItem.Text = "Exibir";
+            this.exibirToolStripMenuItem.MouseLeave += new System.EventHandler(this.exibirToolStripMenuItem_MouseLeave);
+            this.exibirToolStripMenuItem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.exibirToolStripMenuItem_MouseMove);
+            // 
+            // caixaDeFerramentaToolStripMenuItem
+            // 
+            this.caixaDeFerramentaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(36)))), ((int)(((byte)(44)))));
+            this.caixaDeFerramentaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.caixaDeFerramentaToolStripMenuItem.Name = "caixaDeFerramentaToolStripMenuItem";
+            this.caixaDeFerramentaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.caixaDeFerramentaToolStripMenuItem.Text = "Caixa de Ferramenta";
+            this.caixaDeFerramentaToolStripMenuItem.Click += new System.EventHandler(this.caixaDeFerramentaToolStripMenuItem_Click);
             // 
             // sistemaToolStripMenuItem
             // 
@@ -383,6 +409,29 @@
             this.sobreOSistemaToolStripMenuItem.Text = "Sobre";
             this.sobreOSistemaToolStripMenuItem.Click += new System.EventHandler(this.sobreOSistemaToolStripMenuItem_Click);
             // 
+            // nomeDoUsuárioToolStripMenuItem
+            // 
+            this.nomeDoUsuárioToolStripMenuItem.AutoSize = false;
+            this.nomeDoUsuárioToolStripMenuItem.AutoToolTip = true;
+            this.nomeDoUsuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fazerLogoutToolStripMenuItem});
+            this.nomeDoUsuárioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.nomeDoUsuárioToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Insert;
+            this.nomeDoUsuárioToolStripMenuItem.Name = "nomeDoUsuárioToolStripMenuItem";
+            this.nomeDoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(300, 20);
+            this.nomeDoUsuárioToolStripMenuItem.Text = "nome do usuário";
+            this.nomeDoUsuárioToolStripMenuItem.MouseLeave += new System.EventHandler(this.nomeDoUsuárioToolStripMenuItem_MouseLeave);
+            this.nomeDoUsuárioToolStripMenuItem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.nomeDoUsuárioToolStripMenuItem_MouseMove);
+            // 
+            // fazerLogoutToolStripMenuItem
+            // 
+            this.fazerLogoutToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(36)))), ((int)(((byte)(44)))));
+            this.fazerLogoutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.fazerLogoutToolStripMenuItem.Name = "fazerLogoutToolStripMenuItem";
+            this.fazerLogoutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.fazerLogoutToolStripMenuItem.Text = "Fazer Logout";
+            this.fazerLogoutToolStripMenuItem.Click += new System.EventHandler(this.fazerLogoutToolStripMenuItem_Click);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.AutoSize = false;
@@ -567,6 +616,10 @@
         private System.Windows.Forms.ToolStripButton tsBtnBuscarAlu;
         private System.Windows.Forms.Label bemvindo;
         private System.Windows.Forms.Timer BemVindoTimer;
+        private System.Windows.Forms.ToolStripMenuItem nomeDoUsuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exibirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem caixaDeFerramentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fazerLogoutToolStripMenuItem;
     }
 }
 

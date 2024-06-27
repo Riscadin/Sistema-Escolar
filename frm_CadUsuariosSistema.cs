@@ -22,6 +22,7 @@ namespace JanelasMDI
         string strSQL;
         MySqlDataReader dr;
         public string cargo = "";
+        private int flag = 0;
 
 
         int matriDoUsuario = 0;
@@ -140,38 +141,73 @@ namespace JanelasMDI
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            matriDoUsuario = 1 + matriDoUsuario;
-            txtMatriculaUser.Text = Convert.ToString(matriDoUsuario);
+            
             salvarUser();
             metodoLimparCampos();
         }
 
         private void salvarUser()
         {
+            int flag1 = 0;
 
             try
             {
-                conexao = new MySqlConnection("Server = localhost; Database = escola; Uid = rick ; Pwd = 1205;");
-
-                strSQL = "insert into t_usuarios(NomeUsuario,SenhaUsuario,cargo) values(@nome,@senha,@cargo)";
-                comando = new MySqlCommand(strSQL, conexao);
-                comando.Parameters.AddWithValue("@nome", txtNomeUser.Text);
-                comando.Parameters.AddWithValue("@cargo", cbxCargo.Text);
-
-                Criptografia c = new Criptografia(SHA512.Create());
-
-                senhaCriptografada = c.CriptografarSenha(txtSenha.Text);
-
-                if (txtSenha.Text == txtDigNovamenteSenha.Text)
+                char[] nums = { '1', '2', '3', '4', '5', '6', '7', '8', '8', '9', '0' };
+                char[] caracteresEspeciais = { '@', '!', '#', '$', '%', '¨', '&', '*', '(', ')', '-', '_', '+', '=', '§', '{', '}', '[', ']', '?', '/', '.', ',', '>', '<', ':', ';', '"' };
+                foreach (char c in txtNomeUser.Text)
                 {
-                    comando.Parameters.AddWithValue("@senha", senhaCriptografada);
+                    if (nums.Contains(c) || caracteresEspeciais.Contains(c))
+                    {
+                        flag = 1;
+                        break;
+                    }
+
                 }
+                foreach (char c in txtNomeUser.Text)
+                {
+                    if (nums.Contains(c) || caracteresEspeciais.Contains(c))
+                    {
+                        flag1 = 1;
+                        break;
+                    }
 
-                conexao.Open();
+                }
+                if (flag == 1 || flag1 == 1)
+                {
+                    MessageBox.Show("Você digitou algo inválido no seu nome ou no Cargo.", "Erro de digitação!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                   
+                    if (txtDigNovamenteSenha.Text != "" && txtSenha.Text != "" && txtNomeUser.Text != "" && cbxCargo.Text != "")
+                    {
+                        conexao = new MySqlConnection("Server = localhost; Database = escola; Uid = rick ; Pwd = 1205;");
 
-                comando.ExecuteReader();
+                        strSQL = "insert into t_usuarios(NomeUsuario,SenhaUsuario,cargo) values(@nome,@senha,@cargo)";
+                        comando = new MySqlCommand(strSQL, conexao);
+                        comando.Parameters.AddWithValue("@nome", txtNomeUser.Text);
+                        comando.Parameters.AddWithValue("@cargo", cbxCargo.Text);
 
-                MessageBox.Show("Usuário Cadastrado!!");
+                        Criptografia c = new Criptografia(SHA512.Create());
+
+                        senhaCriptografada = c.CriptografarSenha(txtSenha.Text);
+
+                        if (txtSenha.Text == txtDigNovamenteSenha.Text)
+                        {
+                            comando.Parameters.AddWithValue("@senha", senhaCriptografada);
+                        }
+
+                        conexao.Open();
+
+                        comando.ExecuteReader();
+
+                        MessageBox.Show("Usuário Cadastrado!!", "Sucesso", MessageBoxButtons.OK);
+                        matriDoUsuario = 1 + matriDoUsuario;
+                        txtMatriculaUser.Text = Convert.ToString(matriDoUsuario);
+                    }
+                }
+                
+                
 
             }
             catch (Exception ex)

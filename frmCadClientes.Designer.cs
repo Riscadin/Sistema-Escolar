@@ -35,6 +35,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNumeroCasa = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtPais = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,19 +54,20 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.mskDataNasc = new System.Windows.Forms.MaskedTextBox();
             this.cbxGenero = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.mskCpf = new System.Windows.Forms.MaskedTextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtProfissão = new System.Windows.Forms.TextBox();
+            this.txtProfissao = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.dataNascimento = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.mskDdd = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -110,12 +111,13 @@
             this.txtNome.Location = new System.Drawing.Point(171, 73);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(268, 20);
-            this.txtNome.TabIndex = 7;
+            this.txtNome.TabIndex = 6;
             this.toolTip1.SetToolTip(this.txtNome, "O nome completo do cliente.");
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtNumeroCasa);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtPais);
             this.groupBox1.Controls.Add(this.label11);
@@ -123,7 +125,6 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtCidade);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtNumero);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtBairro);
             this.groupBox1.Controls.Add(this.label7);
@@ -140,6 +141,15 @@
             this.groupBox1.Text = "Endereço Residencial ou Comercial";
             this.toolTip1.SetToolTip(this.groupBox1, "O endereço residencial ou comercial do cliente (CEP, Rua, Bairro, Número, Cidade," +
         " Estado,");
+            // 
+            // txtNumeroCasa
+            // 
+            this.txtNumeroCasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroCasa.Location = new System.Drawing.Point(192, 99);
+            this.txtNumeroCasa.Name = "txtNumeroCasa";
+            this.txtNumeroCasa.Size = new System.Drawing.Size(59, 22);
+            this.txtNumeroCasa.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.txtNumeroCasa, "Código que definirá unicamente o cliente.");
             // 
             // label12
             // 
@@ -177,7 +187,7 @@
             this.txtEstado.Location = new System.Drawing.Point(6, 146);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(137, 22);
-            this.txtEstado.TabIndex = 18;
+            this.txtEstado.TabIndex = 19;
             // 
             // label10
             // 
@@ -196,7 +206,7 @@
             this.txtCidade.Location = new System.Drawing.Point(257, 99);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(252, 22);
-            this.txtCidade.TabIndex = 16;
+            this.txtCidade.TabIndex = 18;
             // 
             // label9
             // 
@@ -208,14 +218,6 @@
             this.label9.Size = new System.Drawing.Size(61, 16);
             this.label9.TabIndex = 15;
             this.label9.Text = "Número";
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumero.Location = new System.Drawing.Point(192, 99);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(59, 22);
-            this.txtNumero.TabIndex = 14;
             // 
             // label8
             // 
@@ -235,7 +237,7 @@
             this.txtBairro.Location = new System.Drawing.Point(6, 99);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(180, 22);
-            this.txtBairro.TabIndex = 12;
+            this.txtBairro.TabIndex = 16;
             // 
             // label7
             // 
@@ -265,7 +267,7 @@
             this.txtRua.Location = new System.Drawing.Point(84, 58);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(425, 22);
-            this.txtRua.TabIndex = 10;
+            this.txtRua.TabIndex = 15;
             // 
             // mskCep
             // 
@@ -274,7 +276,7 @@
             this.mskCep.Mask = "00000-000";
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(72, 22);
-            this.mskCep.TabIndex = 0;
+            this.mskCep.TabIndex = 14;
             this.mskCep.Leave += new System.EventHandler(this.mskCep_Leave);
             // 
             // mskTelefone
@@ -283,7 +285,7 @@
             this.mskTelefone.Mask = "000000000";
             this.mskTelefone.Name = "mskTelefone";
             this.mskTelefone.Size = new System.Drawing.Size(66, 20);
-            this.mskTelefone.TabIndex = 22;
+            this.mskTelefone.TabIndex = 8;
             this.toolTip1.SetToolTip(this.mskTelefone, "Número de telefone principal do cliente (DDD, Número).");
             // 
             // label13
@@ -315,7 +317,7 @@
             this.txtEmail.Location = new System.Drawing.Point(31, 114);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(314, 20);
-            this.txtEmail.TabIndex = 24;
+            this.txtEmail.TabIndex = 9;
             this.toolTip1.SetToolTip(this.txtEmail, "Endereço de e-mail do cliente.");
             // 
             // label15
@@ -330,15 +332,6 @@
             this.label15.TabIndex = 27;
             this.label15.Text = "Nascimento";
             // 
-            // mskDataNasc
-            // 
-            this.mskDataNasc.Location = new System.Drawing.Point(351, 114);
-            this.mskDataNasc.Mask = "00/00/0000";
-            this.mskDataNasc.Name = "mskDataNasc";
-            this.mskDataNasc.Size = new System.Drawing.Size(109, 20);
-            this.mskDataNasc.TabIndex = 28;
-            this.toolTip1.SetToolTip(this.mskDataNasc, "Data de nascimento do cliente.");
-            // 
             // cbxGenero
             // 
             this.cbxGenero.FormattingEnabled = true;
@@ -348,7 +341,7 @@
             this.cbxGenero.Location = new System.Drawing.Point(214, 159);
             this.cbxGenero.Name = "cbxGenero";
             this.cbxGenero.Size = new System.Drawing.Size(119, 21);
-            this.cbxGenero.TabIndex = 29;
+            this.cbxGenero.TabIndex = 13;
             this.toolTip1.SetToolTip(this.cbxGenero, "O gênero do cliente, se relevante para os propósitos do cadastro.");
             // 
             // label16
@@ -369,7 +362,7 @@
             this.mskCpf.Mask = "000.000.000-00";
             this.mskCpf.Name = "mskCpf";
             this.mskCpf.Size = new System.Drawing.Size(83, 20);
-            this.mskCpf.TabIndex = 32;
+            this.mskCpf.TabIndex = 11;
             this.toolTip1.SetToolTip(this.mskCpf, "Número de CPF.");
             // 
             // label17
@@ -396,13 +389,13 @@
             this.label18.TabIndex = 34;
             this.label18.Text = "Profissão";
             // 
-            // txtProfissão
+            // txtProfissao
             // 
-            this.txtProfissão.Location = new System.Drawing.Point(31, 159);
-            this.txtProfissão.Name = "txtProfissão";
-            this.txtProfissão.Size = new System.Drawing.Size(177, 20);
-            this.txtProfissão.TabIndex = 33;
-            this.toolTip1.SetToolTip(this.txtProfissão, "Profissão ou ocupação do cliente.");
+            this.txtProfissao.Location = new System.Drawing.Point(31, 159);
+            this.txtProfissao.Name = "txtProfissao";
+            this.txtProfissao.Size = new System.Drawing.Size(177, 20);
+            this.txtProfissao.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.txtProfissao, "Profissão ou ocupação do cliente.");
             // 
             // btnLimpar
             // 
@@ -415,7 +408,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(457, 385);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(91, 22);
-            this.btnLimpar.TabIndex = 35;
+            this.btnLimpar.TabIndex = 22;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -431,11 +424,23 @@
             this.btnSalvar.Location = new System.Drawing.Point(30, 385);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(91, 22);
-            this.btnSalvar.TabIndex = 36;
+            this.btnSalvar.TabIndex = 21;
             this.btnSalvar.Text = "Salvar";
             this.toolTip1.SetToolTip(this.btnSalvar, "Salvar Cadastro do Cliente");
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // dataNascimento
+            // 
+            this.dataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataNascimento.Location = new System.Drawing.Point(351, 114);
+            this.dataNascimento.MaxDate = new System.DateTime(2024, 6, 24, 0, 0, 0, 0);
+            this.dataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dataNascimento.Name = "dataNascimento";
+            this.dataNascimento.Size = new System.Drawing.Size(109, 20);
+            this.dataNascimento.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.dataNascimento, "Escolha sua data de nascimento.");
+            this.dataNascimento.Value = new System.DateTime(2024, 6, 24, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -455,7 +460,7 @@
             this.mskDdd.Mask = "00";
             this.mskDdd.Name = "mskDdd";
             this.mskDdd.Size = new System.Drawing.Size(32, 20);
-            this.mskDdd.TabIndex = 43;
+            this.mskDdd.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -467,6 +472,16 @@
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(627, 210);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "teste";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmCadClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,18 +490,19 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(829, 473);
+            this.Controls.Add(this.dataNascimento);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mskDdd);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.txtProfissão);
+            this.Controls.Add(this.txtProfissao);
             this.Controls.Add(this.mskCpf);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.cbxGenero);
-            this.Controls.Add(this.mskDataNasc);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtEmail);
@@ -525,7 +541,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label label7;
@@ -537,18 +552,20 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.MaskedTextBox mskDataNasc;
         private System.Windows.Forms.ComboBox cbxGenero;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtProfissão;
+        private System.Windows.Forms.TextBox txtProfissao;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox mskDdd;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtNumeroCasa;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dataNascimento;
     }
 }

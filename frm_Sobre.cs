@@ -21,5 +21,35 @@ namespace JanelasMDI
         {
             this.Close();
         }
+
+        private void frm_Sobre_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+        }
+
+        private void linkLabel1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://wa.me/5528999021611");
+        }
+
+        private void linkLabel2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://gmail.com/");
+        }
+
+        private void linkLabel3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://riscadin.github.io/prtifolioDDSricardo/");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

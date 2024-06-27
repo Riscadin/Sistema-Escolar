@@ -92,18 +92,26 @@ namespace JanelasMDI
                         }
                         else
                         {
-                            MessageBox.Show("NOME OU SENHA ESTÁ ERRADO!!");
+                            MessageBox.Show("NOME OU SENHA INCORRETA!!", "Erro!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            txtLogin.Clear();
+                            txtSenha.Clear();
+                            txtLogin.Focus();
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("SENHA ESTÁ ERRADO!!");
+                        MessageBox.Show("SENHA INCORRETA!!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtSenha.Clear();
+                        txtSenha.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("NOME OU SENHA ESTÁ ERRADO!!");
+                    MessageBox.Show("NOME OU SENHA INCORRETA!!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtLogin.Clear();
+                    txtSenha.Clear();
+                    txtLogin.Focus();
                 }
 
 
